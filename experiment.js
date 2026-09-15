@@ -94,7 +94,7 @@
   // ==============================
   // Stimulus size (relative to design height)
   // ==============================
-  const IMG_SIZE = Math.round(DESIGN_H * 0.13); // 约等于 150px @1200
+  const IMG_SIZE = "clamp(72px, 13vh, 156px)";
   const IMG_W = IMG_SIZE;
   const IMG_H = IMG_SIZE;
 
@@ -272,7 +272,7 @@
           position:absolute;
           left:${left}; top:${top};
           transform: translate(-50%,-50%);
-          width:${IMG_W}px; height:${IMG_H}px;
+          width:${IMG_W}; height:${IMG_H};
         ">
     `;
   }
