@@ -43,7 +43,8 @@
       width: 100% !important;
       height: 100% !important;
       background: rgb(128,128,128);
-      overflow: hidden !important;
+      overflow-x: hidden !important;
+      overflow-y: auto !important;
     }
 
     /*
@@ -70,13 +71,33 @@
     }
 
     #jspsych-survey-html-form {
-      width: min(720px, calc(100vw - 32px));
-      max-height: calc(100vh - 32px);
-      max-height: calc(100dvh - 32px);
-      margin: auto;
-      overflow-y: auto;
+      width: min(620px, calc(100vw - 32px));
+      margin: max(16px, 3vh) auto;
       overflow-x: hidden;
       box-sizing: border-box;
+    }
+
+    #jspsych-survey-html-form > div {
+      width: 100%;
+      max-width: 620px !important;
+      box-sizing: border-box;
+    }
+
+    #jspsych-survey-html-form input[type="text"] {
+      width: 100% !important;
+      box-sizing: border-box;
+    }
+
+    @media (max-height: 800px) {
+      #jspsych-survey-html-form h2 {
+        font-size: 32px !important;
+        margin-bottom: 8px !important;
+      }
+
+      #jspsych-survey-html-form p {
+        margin-top: 8px;
+        margin-bottom: 8px;
+      }
     }
 
     #jspsych-survey-html-form-next { display: none; }
