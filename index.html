@@ -26,8 +26,8 @@
     #jspsych-target{
       position: fixed;
       inset: 0;
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      height: 100%;
       background: rgb(128,128,128);
       overflow: hidden;
     }
@@ -38,20 +38,19 @@
       再按屏幕自动 scale + 居中
     */
     #exp-scale-wrap{
-      width: var(--design-w);
-      height: var(--design-h);
-      transform-origin: top left;
-      transform: translate(var(--offset-x), var(--offset-y)) scale(var(--scale));
+      position: absolute;
+      inset: 0;
+      width: 100% !important;
+      height: 100% !important;
       background: rgb(128,128,128);
+      overflow: hidden !important;
     }
 
     /*
       ✅ 避免 jsPsych 默认 content-wrapper 影响布局
       让内容在我们的壳里正常渲染即可
     */
-    .jspsych-display-element,
-    .jspsych-content-wrapper,
-    .jspsych-content {
+    .jspsych-content-wrapper {
       width: 100% !important;
       height: 100% !important;
       max-width: none !important;
@@ -61,6 +60,26 @@
       box-sizing: border-box !important;
       background: rgb(128,128,128) !important;
     }
+
+    .jspsych-content {
+      width: 100% !important;
+      max-width: none !important;
+      margin: auto !important;
+      padding: 0 !important;
+      box-sizing: border-box !important;
+    }
+
+    #jspsych-survey-html-form {
+      width: min(720px, calc(100vw - 32px));
+      max-height: calc(100vh - 32px);
+      max-height: calc(100dvh - 32px);
+      margin: auto;
+      overflow-y: auto;
+      overflow-x: hidden;
+      box-sizing: border-box;
+    }
+
+    #jspsych-survey-html-form-next { display: none; }
   </style>
 
   <!-- jsPsych core -->
