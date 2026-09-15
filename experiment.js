@@ -87,14 +87,14 @@
     SEND_MAX = 1.5; // s
 
   // Pixel units (match PsychoPy)
-  const POS_L_X = -270;
-  const POS_R_X = 270;
-  const POS_Y = 0;
+  const POS_L_X = 0.35;
+  const POS_R_X = 0.65;
+  const POS_Y = 0.50;
 
   // ==============================
   // Stimulus size (relative to design height)
   // ==============================
-  const IMG_SIZE = "clamp(72px, 13vh, 156px)";
+  const IMG_SIZE = "13vh";
   const IMG_W = IMG_SIZE;
   const IMG_H = IMG_SIZE;
 
@@ -264,8 +264,8 @@
   }
 
   function imgAt(path, x, y) {
-    const left = `calc(50% + ${x}px)`;
-    const top = `calc(50% + ${y}px)`;
+    const left = `${x * 100}%`;
+    const top = `${y * 100}%`;
     return `
       <img src="${path}"
         style="
